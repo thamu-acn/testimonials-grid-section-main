@@ -1,0 +1,117 @@
+@use "./reset.scss" as *;
+@use "./colors.scss" as c;
+@use "./fonts.scss" as f;
+
+body {
+  background-color: c.$light-grayish-blue;
+  min-height: 100vh;
+  font-family: f.$family;
+  font-size: f.$size;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.card {
+  padding: 1.5rem;
+  border-radius: 0.3125rem;
+  margin-bottom: 1rem;
+
+  &--violet {
+    background-color: c.$moderate-violet;
+    background-image: url(../images/bg-pattern-quotation.svg);
+    background-position-x: 90%;
+    background-repeat: no-repeat;
+    color: c.$white;
+  }
+
+  &--greyish-blue {
+    background-color: c.$very-dark-grayish-blue;
+    color: c.$white;
+  }
+
+  &--white {
+    background-color: c.$white;
+    color: c.$very-dark-blackish-blue;
+  }
+
+  &--blackish-blue {
+    background-color: c.$very-dark-blackish-blue;
+    color: c.$white;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+
+    &-image {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+    }
+
+    &-status {
+      opacity: 50%;
+      display: block;
+    }
+  }
+
+  &__content {
+    &--main {
+      margin-bottom: 1rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    &--review {
+      opacity: 70%;
+    }
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    place-content: cent
+    column-gap: 2rem;
+    row-gap: 1rem;
+    width: 75%;
+    margin-top: 5rem;
+  }
+
+  .card {
+    &--violet {
+      grid-column: 1 / 3;
+      grid-row: 1 / 2;
+    }
+    &--greyish-blue {
+      grid-column: 3 / 4;
+      grid-row: 1 / 2;
+    }
+    &--white-long {
+      grid-column: 4 / 5;
+      grid-row: 1 / 3;
+    }
+    &--white-short {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+    &--blackish-blue {
+      grid-column: 2 / 4;
+      grid-row: 2 / 3;
+    }
+  }
+}
