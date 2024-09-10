@@ -85,7 +85,7 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    place-content: cent
+    place-content: center;
     column-gap: 2rem;
     row-gap: 1rem;
     width: 75%;
